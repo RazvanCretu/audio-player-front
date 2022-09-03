@@ -1,0 +1,19 @@
+.audio-controls {
+    display: flex;
+    justify-content: space-evenly;
+    width:  50%;
+    margin: 15px auto 15px;
+  }
+
+.playBtn svg, .pauseBtn svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--white);
+}
+
+.prevBtn svg, .nextBtn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--white);
+}
+
