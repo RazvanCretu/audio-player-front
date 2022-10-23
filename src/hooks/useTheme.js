@@ -11,7 +11,7 @@ export const useTheme = () => {
 
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
-    localTheme ? setTheme(localTheme) : setMode("dark");
+    localTheme ? setTheme(localTheme) : setMode(theme);
     setMounted(true);
   }, [theme, setMounted]);
 
