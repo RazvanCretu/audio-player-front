@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import AudioControls from "./AudioControls";
 import AudioHero from "./AudioHero"
 import Thumbnail from "./Thumbnail";
 import "../styles/AudioPlayer.css";
 import { ReactComponent as Waves } from "../static/waves.svg";
+import { ThemeContext } from "../contexts/ThemeContext"
 
 /*
  * Read the blog post here:
@@ -135,8 +136,11 @@ const AudioPlayer = ({ tracks }) => {
     };
   }, []);
 
+  const { theme, toggleTheme } = useContext(ThemeContext)
+
   return (
     <div id="audio" className="audio-container">
+
       <img
         src="https://m.cdn.sera.to/v3/homepage/background/home-hero-ls-3-md.jpg"
         className="image"
@@ -144,6 +148,9 @@ const AudioPlayer = ({ tracks }) => {
       />
       <div className="overlay"></div>
       <div className="audio-player" >
+        <button onClick={toggleTheme}>
+          Current theme is: {theme}
+        </button>
         <Thumbnail src={imageSrc}/>
         <AudioHero name={name} artist={artist} />
         <AudioControls

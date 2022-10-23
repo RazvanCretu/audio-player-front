@@ -3,6 +3,7 @@ import "./styles/App.css";
 import AudioPlayer from "./components/AudioPlayer";
 import Socials from "./components/Socials";
 import { ReactComponent as Disc } from "./static/dj-pad.svg";
+import { Theme } from "./contexts/ThemeContext";
 
 const data = [
   {
@@ -149,13 +150,15 @@ const data = [
 
 function App() {
   return (
-    <div className="App">
-      <AudioPlayer tracks={data} />
-      <section className="section-about">
-        <Disc className="disc" />
-        <Socials />
-      </section>
-    </div>
+    <Theme>
+      <div className="App">
+        <AudioPlayer tracks={data} />
+        <section className="section-about">
+          <Disc className="disc" />
+          <Socials />
+        </section>
+      </div>
+    </Theme>
   );
 }
 
