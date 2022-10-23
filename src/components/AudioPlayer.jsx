@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import AudioControls from "./AudioControls";
-import "./AudioPlayer.css";
+import AudioHero from "./AudioHero"
+import Thumbnail from "./Thumbnail";
+import "../styles/AudioPlayer.css";
+import { ReactComponent as Waves } from "../static/waves.svg";
 
 /*
  * Read the blog post here:
  * https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
  */
+
 const AudioPlayer = ({ tracks }) => {
-  // State
+  // State 
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,6 +32,7 @@ const AudioPlayer = ({ tracks }) => {
       }
     },
   } = tracks[trackIndex];
+
   
   // Refs
   const audioRef = useRef(new Audio(audioSrc));
@@ -40,6 +45,7 @@ const AudioPlayer = ({ tracks }) => {
   const currentPercentage = duration
     ? `${(trackProgress / duration) * 100}%`
     : "0%";
+
   const trackStyling = `
   -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #fff), color-stop(${currentPercentage}, #777))
   `;
@@ -101,13 +107,15 @@ const AudioPlayer = ({ tracks }) => {
   useEffect(() => {
     audioRef.current.pause();
 
-    console.log(isReady.current,trackIndex)
+    // console.log(isReady.current,trackIndex)
     
     audioRef.current = new Audio(audioSrc);
     setTrackProgress(audioRef.current.currentTime);
     
     if (isReady.current) {
-      audioRef.current.play();
+      audioRef.current.play().then().catch((err) => {
+        console.log(err)
+      });
       setIsPlaying(true);
       startTimer();
     } else {
@@ -128,18 +136,23 @@ const AudioPlayer = ({ tracks }) => {
   }, []);
 
   return (
-   <div id="audio" className="audio-container">
-     <div className="audio-player" >
-      <div className="track-info" style={{backgroundImage: `linear-gradient(to top, black 5%, transparent),url(${imageSrc})`}}>
-        <h2 className="title">{name.replace('.mp3','')}</h2>
-        <h3 className="artist">Razvicool</h3>
+    <div id="audio" className="audio-container">
+      <img
+        src="https://m.cdn.sera.to/v3/homepage/background/home-hero-ls-3-md.jpg"
+        className="image"
+        alt="Background"
+      />
+      <div className="overlay"></div>
+      <div className="audio-player" >
+        <Thumbnail src={imageSrc}/>
+        <AudioHero name={name} artist={artist} />
         <AudioControls
             trackIndex={trackIndex}
             setTrackIndex={setTrackIndex}
             isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
             onPrevClick={toPrevTrack}
             onNextClick={toNextTrack}
-            setIsPlaying={setIsPlaying}
         />
         <input
           type="range"
@@ -153,38 +166,34 @@ const AudioPlayer = ({ tracks }) => {
           onKeyUp={onScrubEnd}
           style={{ background: trackStyling }}
         />
-      </div>
-      <div className="track-list">
-        <ul>
-          {tracks && tracks.map((i,index,arr) => {
-            const {
-              attributes: {
-                source: {
-                  data: {
-                    attributes: { url: audioSrc, name },
-                  },
-                },
-                artist,
-                thumbnail: {
-                  data: {
-                    attributes: { url: imageSrc }
+        <div className="track-list">
+          <ul>
+            {tracks && tracks.map((i,index,arr) => {
+              const {
+                attributes: {
+                  source: {
+                    data: {
+                      attributes: { url: audioSrc, name },
+                    },
                   }
-                }
-              },
-            } = i;
+                },
+              } = i;
 
-            return (
-              <li key={index}>
-                <h3 onClick={(e) => {setTrackIndex(index)}} className={index === trackIndex ? "active" : ""}>
-                  {name.replace('.mp3','')}
-                </h3>
-              </li>
-            )
-          })}
-        </ul>
+              return (
+                <li key={index}>
+                  <h3 onClick={(e) => {setTrackIndex(index)}} className={index === trackIndex ? "active" : ""}>
+                    {name.replace('.mp3','')}
+                  </h3>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </div>
+      <div className="wave-divider">
+        <Waves />
       </div>
     </div>
-   </div>
   );
 };
 

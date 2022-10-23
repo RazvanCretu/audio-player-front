@@ -1,0 +1,11 @@
+.thumbnail {
+    display: block;
+    margin-bottom: 2rem;
+}
+  
+.thumbnail img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+}

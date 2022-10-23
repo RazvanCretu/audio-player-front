@@ -1,6 +1,6 @@
 import React from "react";
 import { BsPlayCircle, BsPauseCircle, BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
-import "./AudioControls.css";
+import "../styles/AudioControls.css";
 
 const AudioControls = ({
   isPlaying,
