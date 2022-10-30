@@ -1,0 +1,14 @@
+:root {
+    --font-color: #333;
+    --background-color: #eee;
+    --link-color: cornflowerblue;
+    --about: #aaa;
+}
+
+[data-theme="dark"] {
+    --font-color: #eee;
+    --background-color: #333;
+    --link-color: lightblue;
+    --about: #282c34;
+}
+  

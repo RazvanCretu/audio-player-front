@@ -11,7 +11,7 @@ const data = [
         data: {
           attributes: {
             name: "3ca1 - Intre Lalele.mp3",
-            url: "http://localhost:3000/uploads/3ca1_Intre_Lalele_cfae85214a.mp3",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/3ca1_Intre_Lalele_cfae85214a.mp3`,
           },
         },
       },
@@ -19,7 +19,7 @@ const data = [
       thumbnail: {
         data: {
           attributes: {
-            url: "http://localhost:3000/uploads/first_1aac8a7d7f.jpg",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/first_1aac8a7d7f.jpg`,
           },
         },
       },
@@ -31,7 +31,7 @@ const data = [
         data: {
           attributes: {
             name: "Arapu - Wasted [UND007].mp3",
-            url: "http://localhost:3000/uploads/Arapu_Wasted_UND_007_0ae2b08986.mp3",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/Arapu_Wasted_UND_007_0ae2b08986.mp3`,
           },
         },
       },
@@ -39,7 +39,7 @@ const data = [
       thumbnail: {
         data: {
           attributes: {
-            url: "http://localhost:3000/uploads/second_9fe37bc272.jpg",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/second_9fe37bc272.jpg`,
           },
         },
       },
@@ -51,7 +51,7 @@ const data = [
         data: {
           attributes: {
             name: "Chiodan - Discul Preferat.mp3",
-            url: "http://localhost:3000/uploads/Chiodan_Discul_Preferat_d70cfb90c1.mp3",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/Chiodan_Discul_Preferat_d70cfb90c1.mp3`,
           },
         },
       },
@@ -59,7 +59,7 @@ const data = [
       thumbnail: {
         data: {
           attributes: {
-            url: "http://localhost:3000/uploads/third_11faf04618.jpg",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/third_11faf04618.jpg`,
           },
         },
       },
@@ -71,7 +71,7 @@ const data = [
         data: {
           attributes: {
             name: "3ca1 - Intre Lalele.mp3",
-            url: "http://localhost:3000/uploads/3ca1_Intre_Lalele_cfae85214a.mp3",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/3ca1_Intre_Lalele_cfae85214a.mp3`,
           },
         },
       },
@@ -79,7 +79,7 @@ const data = [
       thumbnail: {
         data: {
           attributes: {
-            url: "http://localhost:3000/uploads/first_1aac8a7d7f.jpg",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/first_1aac8a7d7f.jpg`,
           },
         },
       },
@@ -91,7 +91,7 @@ const data = [
         data: {
           attributes: {
             name: "Arapu - Wasted [UND007].mp3",
-            url: "http://localhost:3000/uploads/Arapu_Wasted_UND_007_0ae2b08986.mp3",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/Arapu_Wasted_UND_007_0ae2b08986.mp3`,
           },
         },
       },
@@ -99,7 +99,7 @@ const data = [
       thumbnail: {
         data: {
           attributes: {
-            url: "http://localhost:3000/uploads/second_9fe37bc272.jpg",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/second_9fe37bc272.jpg`,
           },
         },
       },
@@ -111,7 +111,7 @@ const data = [
         data: {
           attributes: {
             name: "3ca1 - Intre Lalele.mp3",
-            url: "http://localhost:3000/uploads/3ca1_Intre_Lalele_cfae85214a.mp3",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/3ca1_Intre_Lalele_cfae85214a.mp3`,
           },
         },
       },
@@ -119,7 +119,7 @@ const data = [
       thumbnail: {
         data: {
           attributes: {
-            url: "http://localhost:3000/uploads/first_1aac8a7d7f.jpg",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/first_1aac8a7d7f.jpg`,
           },
         },
       },
@@ -131,7 +131,7 @@ const data = [
         data: {
           attributes: {
             name: "Arapu - Wasted [UND007].mp3",
-            url: "http://localhost:3000/uploads/Arapu_Wasted_UND_007_0ae2b08986.mp3",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/Arapu_Wasted_UND_007_0ae2b08986.mp3`,
           },
         },
       },
@@ -139,7 +139,7 @@ const data = [
       thumbnail: {
         data: {
           attributes: {
-            url: "http://localhost:3000/uploads/second_9fe37bc272.jpg",
+            url: `${process.env.REACT_APP_BACKEND_API}/uploads/second_9fe37bc272.jpg`,
           },
         },
       },
